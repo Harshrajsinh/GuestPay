@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -24,6 +27,27 @@ namespace GuestPay
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //if (Debugger.IsAttached)
+            //{
+            //    services.AddDataProtection().SetApplicationName("GuestPay").ProtectKeysWithDpapi(true)
+            //        .PersistKeysToFileSystem(new DirectoryInfo(@"C:\core\keys"));
+            //}
+
+            //Session Management
+            services.AddDistributedSqlServerCache(options =>
+                {
+                    options.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=GuestPay;Integrated Security=True";
+                    options.SchemaName = "dbo";
+                    options.TableName = "ASPStateTempSessions";
+                }
+            );
+
+            services.AddSession(options =>
+            {
+                options.Cookie.Name = "guest_pay";
+                options.IdleTimeout = TimeSpan.FromMinutes(15);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +67,10 @@ namespace GuestPay
             app.UseStaticFiles();
 
             app.UseRouting();
+
+
+            //configuring to use the sessions
+            app.UseSession();
 
             app.UseAuthorization();
 
