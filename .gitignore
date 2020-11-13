@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+GuestPay/wwwroot/lib/bootstrap/LICENSE
+
+GuestPay/wwwroot/lib/bootstrap/README.md
