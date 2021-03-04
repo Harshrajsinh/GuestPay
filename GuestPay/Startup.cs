@@ -33,7 +33,6 @@ namespace GuestPay
             //    services.AddDataProtection().SetApplicationName("GuestPay").ProtectKeysWithDpapi(true)
             //        .PersistKeysToFileSystem(new DirectoryInfo(@"C:\core\keys"));
             //}
-
             //Session Management
             services.AddDistributedSqlServerCache(options =>
                 {
@@ -78,7 +77,7 @@ namespace GuestPay
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=SubscriberDetails}/{id?}");
             });
         }
     }

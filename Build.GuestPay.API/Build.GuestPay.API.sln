@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuestPay.API", "..\GuestPay.API\GuestPay.API.csproj", "{E844566C-3A30-47A0-998E-754A8F22C9D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuestPay.Repo", "..\GuestPay.Repo\GuestPay.Repo.csproj", "{566B1149-2523-45D0-802E-0A25E70EE14B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E844566C-3A30-47A0-998E-754A8F22C9D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E844566C-3A30-47A0-998E-754A8F22C9D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E844566C-3A30-47A0-998E-754A8F22C9D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E844566C-3A30-47A0-998E-754A8F22C9D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{566B1149-2523-45D0-802E-0A25E70EE14B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{566B1149-2523-45D0-802E-0A25E70EE14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{566B1149-2523-45D0-802E-0A25E70EE14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{566B1149-2523-45D0-802E-0A25E70EE14B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4ED430F-4959-4CA0-9A1B-2D56FF24DDD3}
+	EndGlobalSection
+EndGlobal
