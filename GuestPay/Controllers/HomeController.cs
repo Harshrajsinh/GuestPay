@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GuestPay.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Primitives;
 
 namespace GuestPay.Controllers
 {
@@ -18,8 +16,30 @@ namespace GuestPay.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult SubscriberDetails()
         {
+            //StringValues userName;
+            //var userName = HttpContext.Request.Headers["UserName"].ToString();
+            var userName = "e3104";
+            HttpContext.Session.SetString("userName",userName);
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SubscriberDetails(SubscriberDetails subscriberDetails)
+        {
+
+            //if (!ModelState.IsValid)
+            //    return View();
+            //var userName = HttpContext.Session.GetString("userName");
+
+
+
+
+            
+            var sb = subscriberDetails;
+
             return View();
         }
 
